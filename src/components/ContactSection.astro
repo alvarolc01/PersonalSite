@@ -71,10 +71,13 @@
             </div>
 
             <div>
-                <h3>Leave a message</h3>
-                <form>
+                <h3 class="text-xl font-bold mb-4">Leave a message</h3>
+                <form class="space-y-4">
                     <div>
-                        <label for="input-name">
+                        <label 
+                            for="input-name"
+                            class="text-sm font-medium mb-1 block"
+                        >
                             Name
                         </label>
                         <input
@@ -82,12 +85,17 @@
                             id="input-name"
                             name="input-name"
                             placeholder="Your name"
+                            class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 outline-none translation-all duration-300"
                             required
                         />
                     </div>
 
                     <div>
-                        <label for="input-email">
+                        <label 
+                            for="input-email"
+                            class="text-sm font-medium mb-1 block"
+                        >
+    
                             Email
                         </label>
                         <input
@@ -95,12 +103,16 @@
                             id="input-email"
                             name="input-email"
                             placeholder="Your email"
+                            class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 outline-none translation-all duration-300"
                             required
                         />
                     </div>
 
                     <div>
-                        <label for="input-subject">
+                        <label 
+                            for="input-subject"
+                            class="text-sm font-medium mb-1 block"
+                        >
                             Subject
                         </label>
                         <input
@@ -108,12 +120,17 @@
                             id="input-subject"
                             name="input-subject"
                             placeholder="Subject"
+                            class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 outline-none translation-all duration-300"
                             required
                         />
                     </div>
 
                     <div>
-                        <label for="input-message">
+                        <label 
+                            for="input-message"
+                            class="text-sm font-medium mb-1 block"
+                        >
+
                             Message
                         </label>
                         <input
@@ -121,12 +138,14 @@
                             id="input-message"
                             name="input-message"
                             placeholder="Your message"
+                            class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 outline-none translation-all duration-300"
                             required
                         />
                     </div>
 
                     <button
                         type="submit"
+                        class="w-full px-6 py-3 bg-gray-300 rounded-lg shadow-md hover:shadow-lg translation-all duration-300 transform hover:-translate-y-1"
                     >
                         Send
                     </button>
