@@ -20,7 +20,6 @@
         "description": "Did some cool stuff",
         "images": ["https://placehold.co/400x400"],
         "usedStack": ["Java", "Golang", "Astrojs"],
-        "repo": "https://duckduckgo.com",
-        "demo": "https://mullvad.net"
+        "repo": "https://duckduckgo.com"
     }
 ]
