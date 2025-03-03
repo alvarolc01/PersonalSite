@@ -1,36 +1,36 @@
 ---
 ---
 <section id="contact">
-    <div class="container mx-auto">
+    <div class="container mx-auto px-4">
         <h2 class="section-title">
             About me
         </h2>
 
-        <div>
-            <div>
-                <p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <p class="text-lg mb-4 leading-relaxed">
                     Hello! I'm Alvaro Luque, a software engineer from Spain with a passion for technology, 
                     problem-solving, and continuous self-improvement. I love building tools to solve my everyday 
                     challenges—whether it's a small script or a full-scale web application.
                 </p>
-                <p>
+                <p class="text-lg mb-4 leading-relaxed">
                     I graduated with a degree in Computer Science in 2024 and have been working at Entrust as a 
                     software engineer since my final year of studies. Currently, I'm developing an internal-use chatbot, 
                     where I'm continuously applying and refining my skills in a collaborative environment with high-quality standards.
-
                 </p>
-                <p>
+                <p class="text-lg mb-4 leading-relaxed">
                     Outside of work, I enjoy reading and taking walks with my dog. These moments help me 
                     unwind and focused to give my best throughout the day and keep on learning new things.
                 </p>
             </div>
 
-            <div>
-                <div>
+            <div class="flex justify-center order-1 md:order-2">
+                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
                     <img 
                         src="/profile_picture.jpeg" 
                         alt="Profile picture"
-                        onerror=""
+                        class="w-full h-full object-cover"
+                        onerror="this.src='https://via.placeholder.com/400x400?text=Profile+Photo'"
                     />
                 </div>
             </div>
