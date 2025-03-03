@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+
+import SocialLinks from "../components/SocialLinks.astro";
 ---
 
 <!doctype html>
@@ -12,7 +14,10 @@ import "../styles/global.css";
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+		<SocialLinks />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
 
