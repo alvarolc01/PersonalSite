@@ -1,0 +1,28 @@
+[
+    {
+        "company": "Entrust",
+        "position": "Enginyer de Software",
+        "period": "Jun 2024 - Present",
+        "description": "Vaig crear i mantenir un chatbot intern que integrava diverses fonts de coneixement per a la cerca d'informació.",
+        "achievements": [
+            "Vaig implementar funcionalitats d'UI utilitzant HTMX i AlpineJS per millorar l'experiència d'usuari.",
+            "Vaig contribuir a refactoritzar la base de codi anterior, millorant tant el rendiment com la mantenibilitat.",
+            "Vaig desenvolupar el sistema de registre de l'aplicació i el vaig integrar amb Splunk, creant panells de control per millorar la visibilitat.",
+            "Vaig crear alertes de monitorització per diversos serveis utilitzant Datadog per assegurar la disponibilitat del sistema."
+        ],
+        "stack": ["Golang", "Python", "PostgreSQL", "Splunk", "Datadog", "HTMX", "AlpineJS"]
+    },
+    {
+        "company": "Entrust",
+        "position": "Becari d'Enginyeria de Software",
+        "period": "Set 2023 - Jun 2024",
+        "description": "Vaig treballar en la meva tesi com a part d'un pràcticum de R+D, centrat en la computació confidencial.",
+        "achievements": [
+            "Vaig dissenyar i desenvolupar un SDK i API de prova de concepte utilitzant C++ per a la computació confidencial basada al núvol.",
+            "Vaig integrar operacions criptogràfiques tant a l'SDK com a l'API utilitzant OpenSSL per assegurar la seguretat de les dades.",
+            "Vaig implementar un procés d'atestació del client.",
+            "Vaig gestionar la contenització i el desplegament de l'aplicació a la infraestructura al núvol seleccionada."
+        ],
+        "stack": ["C++", "Docker", "OpenSSL"]
+    }
+]

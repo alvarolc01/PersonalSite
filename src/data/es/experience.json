@@ -1,0 +1,28 @@
+[
+    {
+        "company": "Entrust",
+        "position": "Ingeniero de Software",
+        "period": "Jun 2024 - Presente",
+        "description": "Creé y mantuve un chatbot interno que integra múltiples fuentes de conocimiento para la recuperación de información.",
+        "achievements": [
+            "Implementé funcionalidades de UI utilizando HTMX y AlpineJS para mejorar la experiencia del usuario.",
+            "Contribuí a la refactorización de la base de código anterior, mejorando tanto el rendimiento como la mantenibilidad.",
+            "Desarrollé el sistema de registro de la aplicación e integré con Splunk, creando paneles de control para mejorar la visibilidad.",
+            "Creé alertas de monitoreo para varios servicios utilizando Datadog para asegurar la disponibilidad del sistema."
+        ],
+        "stack": ["Golang", "Python", "PostgreSQL", "Splunk", "Datadog", "HTMX", "AlpineJS"]
+    },
+    {
+        "company": "Entrust",
+        "position": "Becario de Ingeniería de Software",
+        "period": "Sep 2023 - Jun 2024",
+        "description": "Trabajé en mi tesis como parte de una pasantía de I+D, enfocándome en la computación confidencial.",
+        "achievements": [
+            "Diseñé y desarrollé un SDK y API de prueba de concepto utilizando C++ para la computación confidencial basada en la nube.",
+            "Integré operaciones criptográficas tanto en el SDK como en la API utilizando OpenSSL para garantizar la seguridad de los datos.",
+            "Implementé un proceso de atestación del client.",
+            "Gestioné la contenedorización y el despliegue de la aplicación en la infraestructura en la nube seleccionada."
+        ],
+        "stack": ["C++", "Docker", "OpenSSL"]
+    }
+]
