@@ -1,0 +1,26 @@
+[
+    {
+        "company": "Entrust",
+        "position": "Software Engineer Intern",
+        "period": "2023 Sep - 2024 Jun",
+        "descrition": "Developed my thesis as an R&D internship",
+        "achievements": [
+            "Did this",
+            "Did that",
+            "Dis this again"
+        ],
+        "stack": ["C++", "Docker", "OpenSSL"]
+    },
+    {
+        "company": "Entrust",
+        "position": "Software Engineer",
+        "period": "2024 Jun - Present",
+        "descrition": "Participed in the design and development of an internal-use chatbot.",
+        "achievements": [
+            "Did this",
+            "Did that",
+            "Dis this again"
+        ],
+        "stack": ["Python", "Golang", "PostgreSQL"]
+    }
+]
