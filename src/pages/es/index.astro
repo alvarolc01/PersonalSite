@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+import LandingSection from '../../components/LandingSection.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import ExperienceSection from '../../components/ExperienceSection.astro';
+import ProjectsSection from '../../components/ProjectsSection.astro';
+import SkillsSection from '../../components/SkillsSection.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import { getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
+import aboutData from '../../data/es/about.json'
+---
+
+<Layout>
+	<LandingSection lang={lang} aboutData={aboutData} />
+	<!-- <AboutSection />
+	<ExperienceSection />
+	<ProjectsSection />
+	<SkillsSection />
+	<ContactSection /> -->
+</Layout>
