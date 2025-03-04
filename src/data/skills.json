@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Languages",
+      "skills": ["C++", "Golang", "Python", "Java", "JavaScript", "SQL"]
+    },
+    {
+      "name": "Web Development",
+      "skills": ["HTML", "CSS", "React", "AstroJS", "AlpineJS", "Tailwind CSS", "API development"]
+    },
+    {
+      "name": "Databases",
+      "skills": ["PostgreSQL", "OracleDB", "Redis"]
+    },
+    {
+      "name": "CVS & Deployment",
+      "skills": ["Git", "Docker", "Jenkins"]
+    },
+    {
+      "name": "Logging & Monitoring",
+      "skills": ["Splunk", "Datadog (Alerts & Monitoring)"]
+    },
+    {
+      "name": "Project Management",
+      "skills": ["Jira", "Confluence", "Agile Development", "Scrum"]
+    }
+  ]
+  
