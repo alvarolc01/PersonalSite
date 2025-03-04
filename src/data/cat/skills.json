@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Llenguatges",
+    "skills": ["C++", "Golang", "Python", "Java", "JavaScript", "SQL"]
+  },
+  {
+    "name": "Desenvolupament Web",
+    "skills": ["HTML", "CSS", "React", "AstroJS", "AlpineJS", "Tailwind CSS", "API"]
+  },
+  {
+    "name": "Bases de Dades",
+    "skills": ["PostgreSQL", "OracleDB", "Redis"]
+  },
+  {
+    "name": "Control de Versions i Desplegament",
+    "skills": ["Git", "GitHub", "Bitbucket", "Docker", "Jenkins"]
+  },
+  {
+    "name": "Registre i Monitorització",
+    "skills": ["Splunk", "Datadog (Alertes i Monitorització)"]
+  },
+  {
+    "name": "Gestió de Projectes",
+    "skills": ["Jira", "Confluence", "Agile", "Scrum"]
+  }
+]
