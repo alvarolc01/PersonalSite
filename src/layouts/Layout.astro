@@ -2,10 +2,16 @@
 import "../styles/global.css";
 
 import SocialLinks from "../components/SocialLinks.astro";
+import LanguageButton from "../components/LanguageButton.astro";
+
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -15,6 +21,7 @@ import SocialLinks from "../components/SocialLinks.astro";
 	</head>
 	<body>
 		<SocialLinks />
+		<LanguageButton lang={lang}/>
 		<main>
 			<slot />
 		</main>

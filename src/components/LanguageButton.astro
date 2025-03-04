@@ -1,0 +1,60 @@
+---
+import { languages } from '../i18n/ui';
+
+export interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+
+---
+
+<div class="fixed top-6 left-6 z-50">
+    <div class="relative">
+      <button id="language-toggle" class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow-md text-dark hover:bg-gray-50 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>{languages[lang as keyof typeof languages]}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      
+      <div id="language-dropdown" class="absolute top-full left-0 mt-2 w-full bg-white rounded-lg shadow-lg overflow-hidden hidden">
+        <ul>
+          {Object.entries(languages).map(([code, name]) => (
+            <li>
+              <a 
+                href={code === 'en' ? '/' : `/${code}`} 
+                class={`block px-4 py-2 hover:bg-gray-50 transition-colors duration-300 ${code === lang ? 'text-primary font-medium' : 'text-dark'}`}
+              >
+                {name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('language-toggle');
+      const dropdown = document.getElementById('language-dropdown');
+      
+      if (toggle && dropdown) {
+        toggle.addEventListener('click', () => {
+          dropdown.classList.toggle('hidden');
+        });
+        
+        document.addEventListener('click', (e) => {
+          if (!toggle.contains(e.target as Node) && !dropdown.contains(e.target as Node)) {
+            dropdown.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
