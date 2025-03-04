@@ -1,0 +1,53 @@
+---
+import experienceData from "../data/experience.json" assert { type: 'json' };
+
+interface JobExperience {
+    company: string;
+    position: string;
+    period: string;
+    description: string;
+    achievements: string[];
+    stack: string[];
+};
+
+const positions: JobExperience[] = experienceData as JobExperience[];
+---
+
+<section id="experience" class="py-12">
+    <div class="container mx-auto px-4">
+        <h2 class="section-title">
+            Experience
+        </h2>
+        <div class="space-y-12 flex flex-col items-center">
+            {positions.map((experience, index) => (
+              <div class="rounded-lg shadow-md p-6 md:p-8 w-8/12">
+                <div class="flex flex-col md:flex-row md:items-start justify-between mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold">{experience.position}</h3>
+                    <p class="text-lg text-primary font-medium">{experience.company}</p>
+                  </div>
+                  <p class="mt-2 md:mt-0">{experience.period}</p>
+                </div>
+                
+                <p class="mb-4">{experience.description}</p>
+                
+                <div class="mb-6">
+                  <ul class="list-disc pl-5 space-y-1">
+                    {experience.achievements.map(achievement => (
+                      <li>{achievement}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <div class="flex flex-wrap gap-2">
+                    {experience.stack.map(tech => (
+                      <span class="px-3 py-1 bg-black text-white rounded-full text-sm">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+    </div>
+</section>
