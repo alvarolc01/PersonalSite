@@ -1,18 +1,24 @@
 ---
-import skillsData from "../data/skills.json" assert {type: 'json'};
+import { useTranslations } from '../i18n/utils';
 
 interface SkillField {
     name: string;
     skills: string[];
 };
 
-const skills: SkillField[] = skillsData as SkillField[];
+export interface Props {
+  lang: string;
+  skillsData: SkillField[];
+};
+
+const { lang, skillsData } = Astro.props;
+const t = useTranslations(lang as any);
 
 ---
 <section id="skills">
     <div class="container mx-auto">
         <h2 class="section-title">
-            Skills
+            {t('nav.skills')}
         </h2>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">

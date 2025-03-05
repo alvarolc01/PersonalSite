@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Pàgina de Solucions d'Advent of Code",
+        "description": "Vaig intentar resoldre tots els problemes d'AoC utilitzant Golang i vaig crear una pàgina web per mostrar les solucions resoltes.",
+        "images": ["https://placehold.co/400x400"],
+        "usedStack": ["Golang", "AstroJS", "AlpineJS", "CSS"],
+        "repo": "https://github.com/alvarolc01/AdventOfCode",
+        "demo": "https://aoc-solutions.pages.dev/"
+    },
+    {
+        "title": "Pàgina Web de Portafoli Personal",
+        "description": "Vaig crear una pàgina web personal per mostrar la meva experiència i els meus projectes.",
+        "images": ["https://placehold.co/400x400"],
+        "usedStack": ["AstroJS", "Tailwind CSS"],
+        "repo": "https://duckduckgo.com",
+        "demo": "https://mullvad.net"
+    }
+]

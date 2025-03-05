@@ -12,8 +12,8 @@
       "skills": ["PostgreSQL", "OracleDB", "Redis"]
     },
     {
-      "name": "CVS & Deployment",
-      "skills": ["Git", "Docker", "Jenkins"]
+      "name": "Version Control & Deployment",
+      "skills": ["Git", "GitHub", "Bitbucket", "Docker", "Jenkins"]
     },
     {
       "name": "Logging & Monitoring",

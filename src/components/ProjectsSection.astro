@@ -1,5 +1,5 @@
 ---
-import projectsData from "../data/projects.json" assert {type: 'json'};
+import { useTranslations } from '../i18n/utils';
 
 interface Project {
     title: string;
@@ -10,16 +10,22 @@ interface Project {
     demo?: string
 };
 
-const projects: Project[] = projectsData as Project[];
+export interface Props {
+  lang: string;
+  projectsData: Project[];
+}
+
+const { lang, projectsData } = Astro.props;
+const t = useTranslations(lang as any);
 
 ---
 <section id="projects">
     <div class="container mx-auto">
         <h2 class="section-title">
-            Projects
+            {t('nav.projects')}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects && projects.map((project) => (
+            {projectsData.map((project) => (
               <div class="project-card rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group">
                 <div class="relative h-48 overflow-hidden">
                     <img 
@@ -79,7 +85,7 @@ const projects: Project[] = projectsData as Project[];
                       rel="noopener noreferrer"
                       class="text-small font-medium"
                     >
-                      View the repository
+                      {t('projects.repo')}
                     </a>
 
                     {
@@ -90,7 +96,7 @@ const projects: Project[] = projectsData as Project[];
                             rel="noopener noreferrer"
                             class="text-small font-medium"
                         >
-                            View a live demo
+                            {t('projects.demo')}
                         </a>
                     }
                   </div>

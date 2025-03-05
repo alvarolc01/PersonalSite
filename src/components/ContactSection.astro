@@ -1,18 +1,26 @@
 ---
+import { useTranslations } from '../i18n/utils';
+
+export interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as any);
 ---
 <section id="contact">
     <div class="container mx-auto">
         <h2 class="section-title">
-            Contact Me
+            {t('nav.contact')}
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
                 <h3 class="text-xl font-bold mb-4">
-                    Reach out
+                    {t('contact.linksHeader')}
                 </h3>
                 <p class="mb-8">
-                    Whether it's for new work opportunities, a project idea to collaborate on, or just to say hi, I'd be happy to hear from you.
+                    {t('contact.linksText')}
                 </p>
 
                 <div id="listed-contact-methods" class="space-y-4">
@@ -24,7 +32,7 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-500">Email</p>
+                            <p class="text-sm text-gray-500">{t('contact.email')}</p>
                             <a href={`href:alvaroluquecu@gmail.com`} class="text-black hover:text-gray-600 transition-colors duration-300">alvaroluquecu@gmail.com</a>
                         </div>
                     </div>
@@ -38,7 +46,7 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-500">LinkedIn</p>
+                            <p class="text-sm text-gray-500">{t('contact.linkedin')}</p>
                             <a href={`https://www.linkedin.com/in/alvaro-lc/`} class="text-black hover:text-gray-600 transition-colors duration-300">alvaro-lc</a>
                         </div>
                     </div>
@@ -50,7 +58,7 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-500">Github</p>
+                            <p class="text-sm text-gray-500">{t('contact.github')}</p>
                             <a href={`https://github.com/alvarolc01`} class="text-black hover:text-gray-600 transition-colors duration-300">alvarolc01</a>
                         </div>
                     </div>
@@ -63,28 +71,28 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-500">Location</p>
-                            <p class="text-black">Barcelona, Catalonia, Spain</p>
+                            <p class="text-sm text-gray-500">{t('contact.locationName')}</p>
+                            <p class="text-black">{t('contact.location')}</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div>
-                <h3 class="text-xl font-bold mb-4">Leave a message</h3>
+                <h3 class="text-xl font-bold mb-4">{t('contact.formHeader')}</h3>
                 <form class="space-y-4">
                     <div>
                         <label 
                             for="input-name"
                             class="text-sm font-medium mb-1 block"
                         >
-                            Name
+                        {t('contact.name')}
                         </label>
                         <input
                             type="text"
                             id="input-name"
                             name="input-name"
-                            placeholder="Your name"
+                            placeholder={t('contact.namePlaceholder')}
                             class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 outline-none translation-all duration-300"
                             required
                         />
@@ -96,13 +104,13 @@
                             class="text-sm font-medium mb-1 block"
                         >
     
-                            Email
+                        {t('contact.email')}
                         </label>
                         <input
                             type="text"
                             id="input-email"
                             name="input-email"
-                            placeholder="Your email"
+                            placeholder={t('contact.emailPlaceholder')}
                             class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 outline-none translation-all duration-300"
                             required
                         />
@@ -113,13 +121,13 @@
                             for="input-subject"
                             class="text-sm font-medium mb-1 block"
                         >
-                            Subject
+                        {t('contact.subject')}
                         </label>
                         <input
                             type="text"
                             id="input-subject"
                             name="input-subject"
-                            placeholder="Subject"
+                            placeholder={t('contact.subjectPlaceholder')}
                             class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 outline-none translation-all duration-300"
                             required
                         />
@@ -131,13 +139,13 @@
                             class="text-sm font-medium mb-1 block"
                         >
 
-                            Message
+                            {t('contact.message')}
                         </label>
                         <input
                             type="text"
                             id="input-message"
                             name="input-message"
-                            placeholder="Your message"
+                            placeholder={t('contact.messagePlaceholder')}
                             class="w-full px-4 py-2 border border-black rounded-lg focus:ring-2 outline-none translation-all duration-300"
                             required
                         />
@@ -147,7 +155,7 @@
                         type="submit"
                         class="w-full px-6 py-3 bg-gray-300 rounded-lg shadow-md hover:shadow-lg translation-all duration-300 transform hover:-translate-y-1"
                     >
-                        Send
+                        {t('contact.sendButton')}
                     </button>
                 </form>
             </div>

@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Advent of Code Solutions Site",
+        "description": "I worked on solving all the Advent of Code problems using Golang and created a site to showcase the completed solutions.",
+        "images": ["https://placehold.co/400x400"],
+        "usedStack": ["Golang", "AstroJS", "AlpineJS", "CSS"],
+        "repo": "https://github.com/alvarolc01/AdventOfCode",
+        "demo": "https://aoc-solutions.pages.dev/"
+    },
+    {
+        "title": "Personal Portfolio Site",
+        "description": "I built a portfolio website to highlight my experience and projects.",
+        "images": ["https://placehold.co/400x400"],
+        "usedStack": ["AstroJS", "Tailwind CSS"],
+        "repo": "https://duckduckgo.com",
+        "demo": "https://mullvad.net"
+    }
+]
