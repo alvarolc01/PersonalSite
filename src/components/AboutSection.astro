@@ -1,27 +1,34 @@
 ---
+import { useTranslations } from '../i18n/utils';
+
+interface AboutData {
+    name: string;
+    position: string;
+    tagLine: string;
+    summary: string[];
+}
+
+export interface Props {
+  lang: string;
+  aboutData: AboutData;
+}
+
+const { lang, aboutData } = Astro.props;
+const t = useTranslations(lang as any);
 ---
-<section id="contact">
+<section id="about">
     <div class="container mx-auto px-4">
         <h2 class="section-title">
-            About me
+            {t('nav.about')}
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="order-2 md:order-1">
-                <p class="text-lg mb-4 leading-relaxed">
-                    Hello! I'm Alvaro Luque, a software engineer from Spain with a passion for technology, 
-                    problem-solving, and continuous self-improvement. I love building tools to solve my everyday 
-                    challenges—whether it's a small script or a full-scale web application.
-                </p>
-                <p class="text-lg mb-4 leading-relaxed">
-                    I graduated with a degree in Computer Science in 2024 and have been working at Entrust as a 
-                    software engineer since my final year of studies. Currently, I'm developing an internal-use chatbot, 
-                    where I'm continuously applying and refining my skills in a collaborative environment with high-quality standards.
-                </p>
-                <p class="text-lg mb-4 leading-relaxed">
-                    Outside of work, I enjoy reading and taking walks with my dog. These moments help me 
-                    unwind and focused to give my best throughout the day and keep on learning new things.
-                </p>
+                {aboutData.summary.map(paragraph => (
+                    <p class="text-lg mb-4 leading-relaxed">
+                        {paragraph}
+                    </p>    
+                ))}
             </div>
 
             <div class="flex justify-center order-1 md:order-2">
