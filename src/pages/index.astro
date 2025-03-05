@@ -15,6 +15,7 @@ const lang = getLangFromUrl(Astro.url);
 import aboutData from '../data/en/about.json'
 import experienceData from '../data/en/experience.json'
 import projectsData from '../data/en/projects.json'
+import skillsData from '../data/en/skills.json'
 ---
 
 <Layout>
@@ -22,6 +23,6 @@ import projectsData from '../data/en/projects.json'
 	<AboutSection lang={lang} aboutData={aboutData}/>
 	<ExperienceSection lang={lang} experienceData={experienceData}/>
 	<ProjectsSection lang={lang} projectsData={projectsData}/>
-	<!-- <SkillsSection lang={lang}/>  -->
+	<SkillsSection lang={lang} skillsData={skillsData}/>
 	<ContactSection lang={lang}/>
 </Layout>
