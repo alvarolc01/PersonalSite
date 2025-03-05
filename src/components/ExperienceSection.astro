@@ -1,5 +1,5 @@
 ---
-import experienceData from "../data/experience.json" assert { type: 'json' };
+import { useTranslations } from '../i18n/utils';
 
 interface JobExperience {
     company: string;
@@ -10,16 +10,22 @@ interface JobExperience {
     stack: string[];
 };
 
-const positions: JobExperience[] = experienceData as JobExperience[];
+export interface Props {
+  lang: string;
+  experienceData: JobExperience[];
+}
+
+const { lang, experienceData } = Astro.props;
+const t = useTranslations(lang as any);
 ---
 
 <section id="experience" class="py-12">
     <div class="container mx-auto px-4">
         <h2 class="section-title">
-            Experience
+            {t('nav.experience')}
         </h2>
         <div class="space-y-12 flex flex-col items-center">
-            {positions.map((experience, index) => (
+            {experienceData.map((experience) => (
               <div class="rounded-lg shadow-md p-6 md:p-8 w-8/12">
                 <div class="flex flex-col md:flex-row md:items-start justify-between mb-4">
                   <div>
