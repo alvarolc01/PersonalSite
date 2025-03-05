@@ -1,12 +1,23 @@
 @import "tailwindcss";
 
-html {
-    scroll-behavior: smooth;
+:root {
+    --primary: #1D4ED8;
+    --secondary: #9333EA;
+    --dark: #111827;
+    --light: #F9FAFB;
+    --accent: #4F46E5;
 }
 
+html,
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 section {
