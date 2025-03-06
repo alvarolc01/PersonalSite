@@ -15,7 +15,7 @@ const { lang, skillsData } = Astro.props;
 const t = useTranslations(lang as any);
 
 ---
-<section id="skills">
+<section id="skills" class="bg-gray-50">
     <div class="container mx-auto">
         <h2 class="section-title">
             {t('nav.skills')}
@@ -23,11 +23,11 @@ const t = useTranslations(lang as any);
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
             {skillsData.map((category) => (
-              <div class=" p-6 rounded-lg shadow-md transform transition-all hover:scale-105 hover:shadow-lg">
+              <div class=" p-6 rounded-lg shadow-md transform transition-all hover:-translate-y-0.5 hover:shadow-lg bg-white">
                 <h3 class="text-xl font-semibold mb-4 text-primary">{category.name}</h3>
                 <ul class="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
-                    <li class="text-sm px-3 py-1 bg-black rounded-full hover:text-primary transition-colors">{skill}</li>
+                    <li class="text-sm px-3 py-1 bg-gradient-to-r from-[var(--primary)]/90 to-[var(--secondary)]/90 text-white rounded-full hover:text-primary transition-colors">{skill}</li>
                   ))}
                 </ul>
               </div>
