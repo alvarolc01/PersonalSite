@@ -26,4 +26,64 @@ const lang = getLangFromUrl(Astro.url);
 			<slot />
 		</main>
 	</body>
+	<script>
+		import { gsap } from 'gsap';
+		import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+		gsap.registerPlugin(ScrollTrigger);
+
+		gsap.from('#landing h1', { 
+			opacity: 0, 
+			y: 50, 
+			duration: 1,
+			delay: 0.2
+		});
+
+		gsap.from('#landing h2', { 
+			opacity: 0, 
+			y: 30, 
+			duration: 1,
+			delay: 0.4
+		});
+		
+		gsap.from('#landing p', { 
+			opacity: 0, 
+			y: 30, 
+			duration: 1,
+			delay: 0.6
+		});
+		
+		gsap.from('#landing-buttons a', { 
+			opacity: 0, 
+			y: 30, 
+			duration: 1,
+			delay: 0.8,
+			stagger: 0.2
+		});
+
+		const sections = ['#about', '#experience', '#projects', '#skills', '#contact'];
+  
+		sections.forEach(section => {
+			gsap.from(`${section} .section-title`, {
+			scrollTrigger: {
+				trigger: section,
+				start: 'top 80%',
+			},
+			opacity: 0,
+			x: -50,
+			duration: 0.8
+		});
+    
+		gsap.from(`${section} > div > *:not(.section-title)`, {
+			scrollTrigger: {
+				trigger: section,
+				start: 'top 70%',
+			},
+			opacity: 0,
+			y: 50,
+			duration: 0.8,
+			stagger: 0.2
+			});
+		});
+	</script>
 </html>
