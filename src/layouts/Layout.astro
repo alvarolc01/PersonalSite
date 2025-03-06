@@ -60,5 +60,30 @@ const lang = getLangFromUrl(Astro.url);
 			delay: 0.8,
 			stagger: 0.2
 		});
+
+		const sections = ['#about', '#experience', '#projects', '#skills', '#contact'];
+  
+		sections.forEach(section => {
+			gsap.from(`${section} .section-title`, {
+			scrollTrigger: {
+				trigger: section,
+				start: 'top 80%',
+			},
+			opacity: 0,
+			x: -50,
+			duration: 0.8
+		});
+    
+		gsap.from(`${section} > div > *:not(.section-title)`, {
+			scrollTrigger: {
+				trigger: section,
+				start: 'top 70%',
+			},
+			opacity: 0,
+			y: 50,
+			duration: 0.8,
+			stagger: 0.2
+			});
+		});
 	</script>
 </html>
