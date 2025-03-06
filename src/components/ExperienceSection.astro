@@ -26,13 +26,13 @@ const t = useTranslations(lang as any);
         </h2>
         <div class="space-y-12 flex flex-col items-center">
             {experienceData.map((experience) => (
-              <div class="rounded-lg shadow-md p-6 md:p-8 w-8/12">
+              <div class="rounded-lg shadow-lg p-6 md:p-8 w-8/12 hover:shadow-xl hover:-translate-y-0.5">
                 <div class="flex flex-col md:flex-row md:items-start justify-between mb-4">
                   <div>
                     <h3 class="text-xl font-bold">{experience.position}</h3>
-                    <p class="text-lg text-primary font-medium">{experience.company}</p>
+                    <p class="text-lg text-[var(--primary)] font-medium">{experience.company}</p>
                   </div>
-                  <p class="mt-2 md:mt-0">{experience.period}</p>
+                  <p class="mt-2 md:mt-0 text-[var(--dark)]/70">{experience.period}</p>
                 </div>
                 
                 <p class="mb-4">{experience.description}</p>
@@ -40,7 +40,7 @@ const t = useTranslations(lang as any);
                 <div class="mb-6">
                   <ul class="list-disc pl-5 space-y-1">
                     {experience.achievements.map(achievement => (
-                      <li>{achievement}</li>
+                      <li class="text-[var(--dark)]/90">{achievement}</li>
                     ))}
                   </ul>
                 </div>
@@ -48,7 +48,7 @@ const t = useTranslations(lang as any);
                 <div>
                   <div class="flex flex-wrap gap-2">
                     {experience.stack.map(tech => (
-                      <span class="px-3 py-1 bg-black text-white rounded-full text-sm">{tech}</span>
+                      <span class="px-3 py-1 bg-gray-100 text-[var(--dark)]/70 rounded-full text-sm">{tech}</span>
                     ))}
                   </div>
                 </div>
