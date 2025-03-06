@@ -19,14 +19,14 @@ const { lang, projectsData } = Astro.props;
 const t = useTranslations(lang as any);
 
 ---
-<section id="projects">
-    <div class="container mx-auto">
+<section id="projects" class="bg-white">
+    <div class="container mx-auto px-4">
         <h2 class="section-title">
             {t('nav.projects')}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projectsData.map((project) => (
-              <div class="project-card rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group">
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group">
                 <div class="relative h-48 overflow-hidden">
                     <img 
                         src={project.images[0]} 
@@ -35,14 +35,15 @@ const t = useTranslations(lang as any);
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
 
-                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end 
+                      justify-between p-4 bg-gradient-to-t from-[var(--dark)]/70 to-transparent">
                         <a 
                             href={project.repo} 
                             target="_blank" 
                             rel="noopener noreferrer"
                             aria-label={"URL to " + project.title + " project repository"}
-                            class="text-white hover:text-black duration-300 transition-colors"
-                        >
+                            class="text-white hover:text-[var(--primary)] duration-300 transition-colors"
+                            >
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                             </svg>
@@ -55,7 +56,7 @@ const t = useTranslations(lang as any);
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 aria-label="URL to demo"
-                                class="text-white hover:text-black duration-300 transition-colors"
+                                class="text-white hover:text-[var(--primary)] duration-300 transition-colors"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -69,12 +70,12 @@ const t = useTranslations(lang as any);
                 </div>
                 
                 <div class="p-8">
-                  <h3 class="text-xl font-bold mb-2">{project.title}</h3>
-                  <p class="mb-4">{project.description}</p>
+                  <h3 class="text-xl font-bold text-[var(--dark)] mb-2">{project.title}</h3>
+                  <p class="mb-4 text-[var(--dark)]/70">{project.description}</p>
                   
                   <div class="flex flex-wrap gap-2 mb-4">
                     {project.usedStack.map((tech) => (
-                      <span class="px-2 py-1 bg-black text-white text-sm rounded-full">{tech}</span>
+                      <span class="px-2 py-1 bg-gray-100 text-[var(--dark)]/70 text-sm rounded-full">{tech}</span>
                     ))}
                   </div>
                   
@@ -83,7 +84,7 @@ const t = useTranslations(lang as any);
                       href={project.repo} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      class="text-small font-medium"
+                      class="text-small font-medium text-[var(--primary)] hover:text-[var(--secondary)]/70 transition-colors duration-300"
                     >
                       {t('projects.repo')}
                     </a>
@@ -94,7 +95,7 @@ const t = useTranslations(lang as any);
                             href={project.demo} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            class="text-small font-medium"
+                            class="text-small font-medium text-[var(--primary)] hover:text-[var(--secondary)]/70 transition-colors duration-300"
                         >
                             {t('projects.demo')}
                         </a>
