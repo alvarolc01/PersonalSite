@@ -2,7 +2,7 @@
     {
         "title": "Web de Soluciones de Advent of Code",
         "description": "Trabajé en resolver todos los problemas de Advent of Code utilizando Golang y creé un sitio web para mostrar las soluciones completadas.",
-        "images": ["https://placehold.co/400x400"],
+        "images": ["/aoc-solution-site-screenshot.webp"],
         "usedStack": ["Golang", "AstroJS", "AlpineJS", "CSS"],
         "repo": "https://github.com/alvarolc01/AdventOfCode",
         "demo": "https://aoc-solutions.pages.dev/"
@@ -10,7 +10,7 @@
     {
         "title": "Web de Portafolio Personal",
         "description": "Creé un sitio web para mostrar mi experiencia y proyectos.",
-        "images": ["https://placehold.co/400x400"],
+        "images": ["/portfolio-screenshot.webp"],
         "usedStack": ["AstroJS", "Tailwind CSS"],
         "repo": "https://duckduckgo.com",
         "demo": "https://mullvad.net"
