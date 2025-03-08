@@ -3,11 +3,10 @@ import "../styles/global.css";
 
 import SocialLinks from "../components/SocialLinks.astro";
 import LanguageButton from "../components/LanguageButton.astro";
-
+import NavLinks from "../components/NavLinks.astro";
 import { getLangFromUrl } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
-
 ---
 
 <!doctype html>
@@ -20,6 +19,7 @@ const lang = getLangFromUrl(Astro.url);
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<NavLinks lang={lang}/>
 		<SocialLinks />
 		<LanguageButton lang={lang}/>
 		<main>
@@ -62,7 +62,8 @@ const lang = getLangFromUrl(Astro.url);
 		});
 
 		const sections = ['#about', '#experience', '#projects', '#skills', '#contact'];
-  
+		const navLinks = document.querySelectorAll('nav a');
+
 		sections.forEach(section => {
 			gsap.from(`${section} .section-title`, {
 			scrollTrigger: {
@@ -84,6 +85,45 @@ const lang = getLangFromUrl(Astro.url);
 			duration: 0.8,
 			stagger: 0.2
 			});
+
+			ScrollTrigger.create({
+				trigger: section,
+				start: 'top center',
+				end: 'bottom center',
+				onEnter: () => updateNav(section),
+				onEnterBack: () => updateNav(section),
+				onLeaveBack: () => updateNav(""),
+			});
+		});
+
+
+		function updateNav(sectionId) {
+			navLinks.forEach(link => {
+				link.classList.remove('active');
+				if (link.getAttribute('href') === `${sectionId}`) {
+				link.classList.add('active');
+				}
+			});
+    	}
+
+		gsap.from('#bottom-navbar', {
+			scrollTrigger: {
+				trigger: '#footer',
+				start: 'top bottom',
+				end: 'bottom bottom',
+				onEnter: () => {
+					gsap.to('#bottom-navbar', {
+						opacity: 0,
+						duration: 0.3,
+					});
+				},
+				onLeaveBack: () => {
+					gsap.to('#bottom-navbar', {
+						opacity: 1,
+						duration: 0.3,
+					});
+				},
+			},
 		});
 	</script>
 </html>
