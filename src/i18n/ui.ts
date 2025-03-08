@@ -8,6 +8,8 @@ export const defaultLang = 'en';
 
 export const ui = {
   en: {
+    'site.title': 'Álvaro Luque Culleré - Software Engineer',
+    'site.summary': "Álvaro Luque's Portfolio: See my skills, projects, and experience in Software Engineering",
     'landing.viewWork': 'View my work',
     'landing.letsConnect': "Let's connect!",
     'nav.about': 'About me',
@@ -32,9 +34,13 @@ export const ui = {
     'contact.subjectPlaceholder': 'The subject',
     'contact.message': 'Message',
     'contact.messagePlaceholder': 'Your message',
-    'contact.sendButton': 'Send'
+    'contact.sendButton': 'Send',
+    'contact.successButton': "Sent!",
+    'contact.failureButton': "Send failed"  
   },
   es: {
+    'site.title': 'Álvaro Luque Culleré - Ingeniero de Software',
+    'site.summary': 'Portafolio de Álvaro Luque: Ve mis proyectos y experiencia en Ingeniería de Software',
     'landing.viewWork': 'Ver mi trabajo',
     'landing.letsConnect': 'Conectemos!',
     'nav.about': 'Sobre mí',
@@ -42,7 +48,7 @@ export const ui = {
     'nav.projects': 'Proyectos',
     'projects.repo': 'Ver código',
     'projects.demo': 'Ver demo',
-    'nav.skills': 'Habilidades Técnicas',
+    'nav.skills': 'Competencias',
     'nav.contact': 'Contáctame',
     'contact.linksHeader': 'Ponte en contacto',
     'contact.linksText': "Ya sea por nuevas oportunidades de trabajo, una idea de proyecto para colaborar o simplemente para saludar, estaré encantado de saber de ti.",
@@ -59,9 +65,13 @@ export const ui = {
     'contact.subjectPlaceholder': 'El asunto',
     'contact.message': 'Mensaje',
     'contact.messagePlaceholder': 'Tu mensaje',
-    'contact.sendButton': 'Enviar'
+    'contact.sendButton': 'Enviar',
+    'contact.successButton': "Mensaje enviado",
+    'contact.failureButton': "Error al enviar"  
   },
   cat: {
+    'site.title': 'Álvaro Luque Culleré - Enginyer de Software',
+    'site.summary': "Portfoli d'Álvaro Luque: Veu les meves habilitats, projectes i experiència en Enginyeria de Software",
     'landing.viewWork': 'Veure el meu treball',
     'landing.letsConnect': 'Connectem!',
     'nav.about': 'Qui sóc',
@@ -69,7 +79,7 @@ export const ui = {
     'nav.projects': 'Projectes',
     'projects.repo': 'Veure codi',
     'projects.demo': 'Veure demo',
-    'nav.skills': 'Habilitats Tècniques',
+    'nav.skills': 'Competències',
     'nav.contact': "Contacta'm",
     'contact.linksHeader': "Posa't en contacte",
     'contact.linksText': "Sigui per noves oportunitats de feina, una idea de projecte per col·laborar o simplement per saludar, estaré encantat de saber de tu.",
@@ -86,6 +96,8 @@ export const ui = {
     'contact.subjectPlaceholder': "L'assumpte",
     'contact.message': 'Missatge',
     'contact.messagePlaceholder': 'El teu missatge',
-    'contact.sendButton': 'Enviar'
+    'contact.sendButton': 'Enviar',
+    'contact.successButton': "Enviat!",
+    'contact.failureButton': "Error enviant"
   },
 } as const;

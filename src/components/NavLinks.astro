@@ -1,0 +1,64 @@
+---
+import { useTranslations } from '../i18n/utils';
+
+export interface Props {
+  lang: string;
+
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as any);
+
+const listSection = [
+  {id: "about", translatedName: t('nav.about')},
+  {id: "experience", translatedName: t('nav.experience')},
+  {id: "projects", translatedName: t('nav.projects')},
+  {id: "skills", translatedName: t('nav.skills')},
+  {id: "contact", translatedName: t('nav.contact')}
+]
+
+---
+
+<nav class="fixed bottom-0 left-0 h-fit w-fit justify-self-center right-0 md:top-6 z-150 transition-all duration-300 hidden lg:block">
+  <div class="w-fit mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center py-4 min-w-max px-4 backdrop-blur-md gap-4
+      bg-white/60 hover:bg-white/100 shadow-lg md:rounded-full 
+      transition-colors duration-300 overflow-x-auto">
+      {listSection.map(section => (
+        <a 
+          href={`#${section.id}`} 
+          class="px-4 py-2 text-gray-700 font-medium capitalize 
+          transition-colors duration-200 rounded-full hover:text-white hover:bg-gradient-to-r from-[var(--primary)]/70 to-[var(--secondary)]/70"
+        >
+          {section.translatedName}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<nav id="bottom-navbar" class="fixed bottom-0 left-0 right-0 z-150 transition-all duration-300 lg:hidden overflow-x-scroll">
+  <div class="mx-auto">
+    <div class="flex justify-center py-4 min-w-max px-4 backdrop-blur-md
+      bg-white/60 hover:bg-white/100 shadow-lg rounded-t-lg
+      transition-colors duration-300 overflow-x-auto">
+      {listSection.map(section => (
+        <a 
+          href={`#${section.id}`} 
+          class="px-4 py-2 text-gray-700 font-medium capitalize
+          transition-colors duration-200 rounded-full hover:text-white hover:bg-gradient-to-r from-[var(--primary)]/70 to-[var(--secondary)]/70"
+        >
+          {section.translatedName}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<style>
+  .active {
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    color: white;
+    font-weight: bold;
+  }
+</style>

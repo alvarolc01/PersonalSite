@@ -11,7 +11,7 @@ const { lang } = Astro.props;
 
 <div class="fixed top-6 left-6 z-50">
     <div class="relative">
-      <button id="language-toggle" class="flex items-center gap-2 px-3 py-2 bg-white rounded-lg shadow-md text-dark hover:bg-gray-50 transition-colors duration-300">
+      <button id="language-toggle" class="flex items-center gap-2 px-3 py-2 cursor-pointer bg-white rounded-lg shadow-md text-[var(--dark)] hover:bg-gray-50 transition-colors duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -29,7 +29,7 @@ const { lang } = Astro.props;
             <li>
               <a 
                 href={code === 'en' ? '/' : `/${code}`} 
-                class={`block px-4 py-2 hover:bg-gray-50 transition-colors duration-300 ${code === lang ? 'text-primary font-medium' : 'text-dark'}`}
+                class={`block px-4 py-2 hover:bg-gray-50 transition-colors duration-300 ${code === lang ? 'text-[var(--primary)] font-medium' : 'text-[var(--dark)]'}`}
               >
                 {name}
               </a>
