@@ -4,9 +4,10 @@ import "../styles/global.css";
 import SocialLinks from "../components/SocialLinks.astro";
 import LanguageButton from "../components/LanguageButton.astro";
 import NavLinks from "../components/NavLinks.astro";
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang as any);
 ---
 
 <!doctype html>
@@ -16,7 +17,29 @@ const lang = getLangFromUrl(Astro.url);
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{t('site.title')}</title>
+
+		<meta name="description" content={t('site.summary')}>
+		<link rel="canonical" href="https://alvaroluquecu.com" />
+		<!-- Open Graph -->
+		<meta property="og:title" content={t('site.title')} />
+		<meta property="og:description" content={t('site.summary')} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://alvaroluquecu.com" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={t('site.title')} />
+		<meta name="twitter:description" content={t('site.summary')}/>
+		
+		<script type="application/ld+json">
+			{
+			  "@context": "https://schema.org",
+			  "@type": "WebSite",
+			  "name": "Álvaro Luque Culleré",
+			  "url": "https://alvaroluquecu.com"
+			}
+		</script>
 	</head>
 	<body>
 		<NavLinks lang={lang}/>
