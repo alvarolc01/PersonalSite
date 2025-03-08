@@ -1,0 +1,148 @@
+---
+import { useTranslations } from '../i18n/utils';
+
+export interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang as any);
+---
+
+<div>
+  <h3 class="text-xl font-bold mb-4 text-[var(--dark)]">{t('contact.formHeader')}</h3>
+  <form id="contact-form">
+    <div>
+      <label for="name" class="text-sm my-4 font-medium mb-1 block text-[var(--dark)]/70">
+        {t('contact.name')}
+      </label>
+      <input
+        type="text"
+        id="name"
+        autocomplete="off"
+        name="name"
+        placeholder={t('contact.namePlaceholder')}
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 outline-none 
+                transition-all duration-300 focus:ring-[var(--primary)]/50 focus:border-[var(--primary)]"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="email" class="text-sm my-4 font-medium mb-1 block text-[var(--dark)]/70">
+        {t('contact.email')}
+      </label>
+      <input
+        type="email"
+        id="email"
+        autocomplete="off"
+        name="email"
+        placeholder={t('contact.emailPlaceholder')}
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 outline-none 
+                transition-all duration-300 focus:ring-[var(--primary)]/50 focus:border-[var(--primary)]"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="subject" class="text-sm my-4 font-medium mb-1 block text-[var(--dark)]/70">
+        {t('contact.subject')}
+      </label>
+      <input
+        type="text"
+        autocomplete="off"
+        id="subject"
+        name="subject"
+        placeholder={t('contact.subjectPlaceholder')}
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 outline-none 
+                transition-all duration-300 focus:ring-[var(--primary)]/50 focus:border-[var(--primary)]"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="message" class="text-sm my-4 font-medium mb-1 block text-[var(--dark)]/70">
+        {t('contact.message')}
+      </label>
+      <textarea
+        rows="4"
+        id="message"
+        name="message"
+        placeholder={t('contact.messagePlaceholder')}
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 outline-none 
+                transition-all duration-300 focus:ring-[var(--primary)]/50 focus:border-[var(--primary)]"
+        required
+      ></textarea>
+    </div>
+
+    <button
+    type="submit"
+    id="submit-button"
+    class="w-full px-6 py-3 font-medium text-white rounded-lg shadow-md hover:shadow-lg transition-all  my-4
+            duration-300 transform hover:-translate-y-1 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]"
+  >
+    {t('contact.sendButton')}
+  </button>
+  
+  <button
+    type="button"
+    id="success-button"
+    class="w-full px-6 py-3 my-4 font-medium text-white rounded-lg transform hover:-translate-y-1 shadow-md hover:shadow-lg transition-all duration-300 bg-green-500 hidden"
+  >
+    {t('contact.successButton')}
+  </button>
+  
+  <button
+    type="button"
+    id="failure-button"
+    class="w-full px-6 py-3 my-4 font-medium text-white rounded-lg shadow-md transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 bg-red-500 hidden"
+  >
+    {t('contact.failureButton')}
+  </button>
+  </form>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const submitButton = document.getElementById("submit-button");
+    const successButton = document.getElementById("success-button");
+    const failureButton = document.getElementById("failure-button");
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      successButton.classList.add("hidden"); // hide the success button
+      failureButton.classList.add("hidden"); // hide the failure button
+
+      const formData = new FormData(form);
+
+      function displayResponseButton(responseButton) {
+        submitButton.classList.add("hidden");
+        responseButton.classList.remove("hidden");
+        setTimeout(() => {
+          responseButton.classList.add("hidden");
+          submitButton.classList.remove("hidden");
+        }, 3000);
+      }
+
+      try {
+        const response = await fetch("/api/sendEmail.json", {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          displayResponseButton(successButton)
+          form.reset();
+        } else {
+          displayResponseButton(failureButton)
+        }
+      } catch (error) {
+        displayResponseButton(failureButton)
+        console.error("Form submission error:", error);
+      }
+    });
+  });
+</script>
