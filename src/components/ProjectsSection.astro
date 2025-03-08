@@ -20,7 +20,7 @@ const t = useTranslations(lang as any);
 
 ---
 <section id="projects" class="bg-white">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 py-6">
         <h2 class="section-title">
             {t('nav.projects')}
         </h2>
@@ -29,10 +29,11 @@ const t = useTranslations(lang as any);
               <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group">
                 <div class="relative h-48 overflow-hidden">
                     <img 
+                        loading="lazy"
                         src={project.images[0]} 
                         alt='${project.title} Imag'
                         onerror="this.src='https://placehold.co/400x400'"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        class="object-fit transition-transform duration-500 group-hover:scale-110"
                     />
 
                     <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end 
