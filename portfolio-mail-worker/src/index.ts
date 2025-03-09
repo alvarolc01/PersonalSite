@@ -51,13 +51,13 @@ const sendEmail = async (resend: Resend, body: MailContent) => {
 export default {
 	async fetch(request, env: any, ctx): Promise<Response> {
 		const resend = new Resend(env.RESEND_API_KEY);
-		const requestURL = new URL(request.url);
-	
-		if (requestURL.hostname !== env.ACCEPTED_HOST) {
+		const origin = request.headers.get('Origin');
+
+		if (origin !== env.ACCEPTED_HOST) {
 			return new Response(
 			JSON.stringify({
 				error: "Client host not accepted",
-				message: `Your host, ${requestURL.hostname}, is not among the accepted ones.`,
+				message: `Origin "${origin}" is not among the accepted ones.`,
 			}),
 			{ status: 403, headers: corsHeaders }
 			);
@@ -69,7 +69,8 @@ export default {
 			{ status: 405, headers: corsHeaders }
 			);
 		}
-	
+		
+		const requestURL = new URL(request.url);
 		if (requestURL.pathname !== "/api/email") {
 			return new Response(
 			JSON.stringify({ error: "Not Found", message: "Endpoint does not exist" }),
@@ -86,7 +87,11 @@ export default {
 			{ status: 400, headers: corsHeaders }
 			);
 		}
-	
+		return new Response(
+			JSON.stringify({ message: "emailResult.message" }),
+			{ status: 200, statusText: "OK", headers: corsHeaders }
+		);
+
 		if (!hasRequiredFields(body)) {
 			return new Response(
 			JSON.stringify({
@@ -104,7 +109,6 @@ export default {
 			);
 		}
 	
-		// Send email via Resend (using the new function)
 		const emailResult = await sendEmail(resend, body);
 	
 		if (emailResult.success) {
