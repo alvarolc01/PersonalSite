@@ -1,8 +1,7 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-import cloudflare from '@astrojs/cloudflare';
 
 import sitemap from '@astrojs/sitemap';
 
@@ -20,6 +19,11 @@ export default defineConfig({
     }
   },
   site: "https://alvaroluquecu.com",
-  adapter: cloudflare(),
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+  env: {
+    schema: {
+      API_URL: envField.string({ context: "client", access: "public", optional: false }),
+    }
+  }
+
 });

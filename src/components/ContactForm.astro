@@ -103,6 +103,8 @@ const t = useTranslations(lang as any);
 </div>
 
 <script>
+  import { API_URL } from "astro:env/client"
+
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-form");
     const submitButton = document.getElementById("submit-button");
@@ -116,6 +118,7 @@ const t = useTranslations(lang as any);
       failureButton.classList.add("hidden");
 
       const formData = new FormData(form);
+      const jsonRequestBody = Object.fromEntries(formData.entries());
 
       function displayResponseButton(responseButton) {
         submitButton.classList.add("hidden");
@@ -127,12 +130,12 @@ const t = useTranslations(lang as any);
       }
 
       try {
-        const response = await fetch("/api/sendEmail.json", {
+        const response = await fetch(`${API_URL}/api/email`, {
           method: "POST",
-          body: formData,
+          body: JSON.stringify(jsonRequestBody),
+
         });
 
-        const data = await response.json();
         if (response.ok) {
           displayResponseButton(successButton)
           form.reset();
