@@ -130,7 +130,8 @@ const t = useTranslations(lang as any);
       }
 
       try {
-        const response = await fetch(`${API_URL}/api/email`, {
+        const apiUrl = `${API_URL}/api/email`
+        const response = await fetch(apiUrl, {
           method: "POST",
           body: JSON.stringify(jsonRequestBody),
 
