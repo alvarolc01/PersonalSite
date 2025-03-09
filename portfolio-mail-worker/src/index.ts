@@ -69,7 +69,7 @@ export default {
 			{ status: 405, headers: corsHeaders }
 			);
 		}
-		
+
 		const requestURL = new URL(request.url);
 		if (requestURL.pathname !== "/api/email") {
 			return new Response(
@@ -87,10 +87,6 @@ export default {
 			{ status: 400, headers: corsHeaders }
 			);
 		}
-		return new Response(
-			JSON.stringify({ message: "emailResult.message" }),
-			{ status: 200, statusText: "OK", headers: corsHeaders }
-		);
 
 		if (!hasRequiredFields(body)) {
 			return new Response(
