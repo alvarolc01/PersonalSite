@@ -12,7 +12,7 @@
         "description": "Creé un sitio web para mostrar mi experiencia y proyectos.",
         "images": ["/portfolio-screenshot.webp"],
         "usedStack": ["AstroJS", "Tailwind CSS"],
-        "repo": "https://duckduckgo.com",
-        "demo": "https://mullvad.net"
+        "repo": "https://github.com/alvarolc01/PersonalSite",
+        "demo": "https://alvaroluquecu.com/es"
     }
 ]

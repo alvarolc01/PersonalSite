@@ -12,7 +12,7 @@
         "description": "I built a portfolio website to highlight my experience and projects.",
         "images": ["/portfolio-screenshot.webp"],
         "usedStack": ["AstroJS", "Tailwind CSS"],
-        "repo": "https://duckduckgo.com",
-        "demo": "https://mullvad.net"
+        "repo": "https://github.com/alvarolc01/PersonalSite",
+        "demo": "https://alvaroluquecu.com"
     }
 ]
